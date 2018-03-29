@@ -1,0 +1,22 @@
+{
+    "name": "jrishabh55/appbase-megento-sync",
+    "type": "project",
+    "require": {
+        "vlucas/phpdotenv": "^2.4"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rishabh Jain",
+            "email": "rishabh@jnexsoft.com"
+        }
+    ],
+    "autoload": {
+      "files": [
+        "App/helpers.php"
+      ],
+      "psr-4": {
+        "App\\": "App/"
+      }
+    }
+}
