@@ -2,7 +2,7 @@
 require_once(__DIR__ . "/vendor/autoload.php");
 
 use Dotenv\Dotenv;
-use App\Megento;
+use App\Magento;
 use App\Appbase;
 
 /**
@@ -10,10 +10,10 @@ use App\Appbase;
  */
 (new Dotenv(__DIR__))->load();
 
-// Megento Configuration
-$megento_username = env('MEGENTO_USERNAME');
-$megento_password = env('MEGENTO_PASSWORD');
-$megento = (new Megento(["username" => $megento_username , "password" => $megento_password], "http://13.71.18.199"));
+// magento Configuration
+$magento_username = env('magento_USERNAME');
+$magento_password = env('magento_PASSWORD');
+$magento = (new Magento(["username" => $magento_username , "password" => $magento_password], "http://13.71.18.199"));
 
 // Appbase configuration
 $appbase_secret = env('APPBASE_SECRET');

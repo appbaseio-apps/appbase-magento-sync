@@ -3,7 +3,7 @@ try {
   require(__DIR__. '/init.php');
 
   $timestamp = date("Y-m-d H:i:s");
-  $products = ($megento->getAllProducts()->items);
+  $products = ($magento->getAllProducts()->items);
 
   if (count($products) === 0) {
     throw new Exception("No products found.");

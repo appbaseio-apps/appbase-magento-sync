@@ -3,7 +3,7 @@ namespace App;
 
 use App\Curl;
 
-class Megento {
+class Magento {
 
   const GET_PRODUCTS = "products";
   const ADMIN_TOKEN = "integration/admin/token";
@@ -16,7 +16,7 @@ class Megento {
 
   public function __construct ($credentials, $host) {
     if ( !is_array($credentials) || empty($credentials['username']) || empty($credentials['password']) ) {
-      throw new \Exception("Invalid megento credentials");
+      throw new \Exception("Invalid magento credentials");
     }
 
     $this->credentials = $credentials;
