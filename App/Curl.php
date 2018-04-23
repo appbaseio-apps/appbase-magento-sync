@@ -49,8 +49,11 @@ class Curl {
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_HTTPHEADER, $this->headers + $this->contentType);
     $response = curl_exec($ch);
-    var_dump($type, $data_string, curl_strerror($ch));
-    $response=  json_decode($response);
+    if (!$response) {
+      echo curl_error($ch);
+      exit(1);
+    }
+    $response = json_decode($response);
     return $response;
   }
 
@@ -62,7 +65,11 @@ class Curl {
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_HTTPHEADER, $this->headers);
     $response = curl_exec($ch);
-    $response=  json_decode($response);
+    if (!$response) {
+      echo curl_error($ch);
+      exit(1);
+    }
+    $response = json_decode($response);
     return $response;
   }
 }
