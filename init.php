@@ -11,9 +11,10 @@ use App\Appbase;
 (new Dotenv(__DIR__))->load();
 
 // magento Configuration
-$magento_username = env('magento_USERNAME');
-$magento_password = env('magento_PASSWORD');
-$magento = (new Magento(["username" => $magento_username , "password" => $magento_password], "http://13.71.18.199"));
+$magento_username = env('MAGENTO_USERNAME');
+$magento_password = env('MAGENTO_PASSWORD');
+$magento_host = env('MAGENTO_HOST');
+$magento = (new Magento(["username" => $magento_username , "password" => $magento_password], $magento_host));
 
 // Appbase configuration
 $appbase_secret = env('APPBASE_SECRET');
