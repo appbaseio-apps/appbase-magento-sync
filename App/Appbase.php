@@ -39,10 +39,10 @@ class Appbase {
       $bulk = array_splice($data, 0, 1000);
       $response = $this->bulk($bulk);
       $res = $bulk[1]->sku ." to ". ($bulk[count($bulk) - 1]->sku);
-      if ($response->error) {
-        $res .= " not uploaded. Reason ". $response->error->reason;
+      if (isset($response->error)) {
+        $res .= " not added. Reason ". $response->error->reason;
       } else {
-        $res .= " uploaded.";
+        $res .= " added.";
       }
       // Pushing response to $result array
       echo $res."\n";
