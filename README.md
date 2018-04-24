@@ -9,6 +9,13 @@ Admin username
 Admin password
 ```
 
+![alt text](https://i.imgur.com/prAOP1R.png "Magento2 login screen.")
+For example in the above image
+
+**Host**: localhost/magento2
+**Username**: admin
+**Password**: \*\*\*\*\*\*\*
+
 ## Step 1: Creating an Appbase.io app
 ![alt text](https://i.imgur.com/r6hWKAG.gif "Creating new appbase app")
 
@@ -64,6 +71,6 @@ The following cron request will run daily at 00:00
 
 The syncing works with the [Appbase.io **bulk API**](https://rest.appbase.io/#1162c8a2-733f-aee0-1c57-63fc3979feeb) request and Magento GET Products **\/rest\/default\/v1\/products** API
 
-## Note: 
+## Note:
 
 1. Deleted products sync is not supported at this point. For doing that you will have to delete your appbase app data and redo the sync process.
