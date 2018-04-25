@@ -13,7 +13,9 @@ Admin password
 For example in the above image
 
 **Host**: localhost/magento2
+
 **Username**: admin
+
 **Password**: \*\*\*\*\*\*\*
 
 ## Step 1: Creating an Appbase.io app
