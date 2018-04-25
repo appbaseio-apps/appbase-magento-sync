@@ -17,6 +17,6 @@ $magento_host = env('MAGENTO_HOST');
 $magento = (new Magento(["username" => $magento_username , "password" => $magento_password], $magento_host));
 
 // Appbase configuration
-$appbase_secret = env('APPBASE_SECRET');
-$appbase_app_name = env('APPBASE_APP_NAME');
+$appbase_secret = env('APPBASE_API_KEY');
+$appbase_app_name = env('APPBASE_APP');
 $appbase = (new Appbase($appbase_app_name, $appbase_secret));
