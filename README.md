@@ -43,8 +43,8 @@ Once we have the repository, we can start configuration to sync the Magento stor
 
 Configuration variables will be set in .env file.
 ```
-MEGENTO_USERNAME=
-MEGENTO_PASSWORD=
+MAGENTO_USERNAME=
+MAGENTO_PASSWORD=
 MAGENTO_HOST=
 
 APPBASE_SECRET=
