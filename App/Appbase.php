@@ -38,11 +38,12 @@ class Appbase {
     while (count($data) > 1) {
       $bulk = array_splice($data, 0, 1000);
       $response = $this->bulk($bulk);
-      $res = $bulk[1]->sku ." to ". ($bulk[count($bulk) - 1]->sku);
+      $count = count($bulk);
+      $res = "{$count} products from " . $bulk[1]->sku ." to ". ($bulk[$count - 1]->sku);
       if (isset($response->error)) {
-        $res .= " not added. Reason ". $response->error->reason;
+        $res .= " not synced. Reason ". $response->error->reason;
       } else {
-        $res .= " added.";
+        $res .= " synced.";
       }
       // Pushing response to $result array
       echo $res."\n";

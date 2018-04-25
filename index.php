@@ -19,6 +19,8 @@ try {
   $appbase->addProducts($bulk);
   $appbase->setSyncTimestamp($timestamp);
 
+  echo "You can view the synced data at {$appbase_app_name}";
+
 } catch (Exception $e) {
   echo $e->getMessage();
 }
