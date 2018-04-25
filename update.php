@@ -21,7 +21,7 @@ try {
 
   $appbase->setSyncTimestamp($timestamp);
 
-  echo "You can view the synced data at https://dashboard.appbase.io/dashboard/{$appbase_app_name}\n";
+  echo "You can view the synced data at https://dashboard.appbase.io/browser/{$appbase_app_name}\n";
 
 } catch (Exception $e) {
   echo $e->getMessage();
