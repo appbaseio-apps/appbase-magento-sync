@@ -1,5 +1,6 @@
 <?php
 require_once(__DIR__ . "/vendor/autoload.php");
+ini_set("date.timezone", "UTC");
 
 use Dotenv\Dotenv;
 use App\Magento;
