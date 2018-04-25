@@ -3,6 +3,8 @@
 ## Prerequisites
 ### Magento
 
+We will need the following values from the Magento Store before getting started.
+
 ```plaintext
 HOSTNAME / URL
 Admin username
@@ -10,7 +12,7 @@ Admin password
 ```
 
 ![alt text](https://i.imgur.com/prAOP1R.png "Magento2 login screen.")
-For example in the above image
+For example, in the above image, these would be:
 
 **Host**: localhost/magento2
 
@@ -21,51 +23,48 @@ For example in the above image
 ## Step 1: Creating an Appbase.io app
 ![alt text](https://i.imgur.com/r6hWKAG.gif "Creating new appbase app")
 
-Log in to  appbase.io dashboard, and create a new app.
-
-For this tutorial, we will use an app called newstreamingapp.
-
-```plaintext
-Note
-1. You will have to get admin API credentials from appbaseio app
-2. appbase.io uses HTTP Basic Auth, a widely used protocol for a username:password based authentication.
-```
+Next, we will need an appbase.io app. Login to the [appbase.io dashboard](https://dashboard.appbase.io) and create a new app. You will have to get admin API key from appbase.io app. Once you have created the app, the API key should be accessible from [here](https://dashboard.appbase.io/credentials).
 
 ## Step 2: Clone the project
 
-To start syncing clone the repository to your server or local machine.
+To start syncing, clone the following repository to your server or local machine.
 
-`git clone https://github.com/jrishabh55/appbase-magento-sync`
+```bash
+git clone https://github.com/appbaseio-apps/appbase-magento-sync
+cd appbase-magento-sync
+```
 
 ## Step 3: Configuration
 
 Once we have the repository, we can start configuration to sync the Magento store to appbase.io app we created in Step 1.
 
-Configuration variables will be set in .env file.
-```
+Configuration variables will be set in .env file. You can refer to the `.env.example` file for an example.
+
+```bash
 MAGENTO_USERNAME=
 MAGENTO_PASSWORD=
 MAGENTO_HOST=
 
-APPBASE_SECRET=
-APPBASE_APP_NAME=
+APPBASE_APP=
+APPBASE_API_KEY=
 ```
 
-Above variables should be set in the .env file.
+Save the `.env` file.
 
 ## Step 4: Start Syncing
-To start intial syncing the store please run the following command in the root directory of the repository.
-```php
+
+To start syncing, run the following command:
+
+```bash
 php index.php
 ```
 
-## Step 5: Step Cron
+## Step 5: Setting up as a Cron
 
-To keep the data in sync you will have to create a sync project we will have to setup a cron request.
+As an added step, we can run the above script in a cron job to keep the products in sync.
 
-The frequency of the cron request depends on the frequency of changes in the product a general idea will be once a day.
+The frequency of the cron job should be set based on the frequency of updates in the products in the magento store. We will set it here for this to occur daily.
 
-The following cron request will run daily at 00:00
 
 `0 0 * * * php /path/to/repository/update.php > /dev/null`
 
@@ -76,3 +75,5 @@ The syncing works with the [Appbase.io **bulk API**](https://rest.appbase.io/#11
 ## Note:
 
 1. Deleted products sync is not supported at this point. For doing that you will have to delete your appbase app data and redo the sync process.
+
+2. If a product's SKU changes, the old product will still exist in the appbase.io app. Similar to delete, you will have to rinse the appbase.io app before syncing in such a scenario.
