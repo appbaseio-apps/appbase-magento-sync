@@ -39,7 +39,7 @@ class Appbase {
       $bulk = array_splice($data, 0, 1000);
       $response = $this->bulk($bulk);
       $count = count($bulk);
-      $res = "{$count} products from " . $bulk[1]->sku ." to ". ($bulk[$count - 1]->sku);
+      $res = $count / 2 ." products from " . $bulk[1]->sku ." to ". ($bulk[$count - 1]->sku);
       if (isset($response->error)) {
         $res .= " not synced. Reason ". $response->error->reason;
       } else {
