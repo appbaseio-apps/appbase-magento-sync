@@ -1,5 +1,5 @@
 {
-    "name": "jrishabh55/appbase-megento-sync",
+    "name": "appbaseio-apps/appbase-megento-sync",
     "type": "project",
     "require": {
         "vlucas/phpdotenv": "^2.4"
@@ -8,7 +8,7 @@
     "authors": [
         {
             "name": "Rishabh Jain",
-            "email": "rishabh@jnexsoft.com"
+            "email": "jrishabh55@gmail.com"
         }
     ],
     "scripts": {
