@@ -9,7 +9,7 @@ class Curl {
 
   public function addHeaders($headers) {
     foreach ($headers as $header) {
-      $this->setHeader($header);
+      $this->addHeader($header);
     }
   }
 
